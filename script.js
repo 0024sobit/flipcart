@@ -311,11 +311,12 @@ function checkboxListner() {
     checkbox.addEventListener('click', () => {
         if(main.style.display = 'none')
         mainn.style.display = 'none';
-        sortMenuu.style.display = 'block';
+        sortMenuu.style.display = 'block';   
     });
 });
 
-}
+}  
+
 
 
 
@@ -340,7 +341,7 @@ document.getElementById('sort-high').addEventListener('change', function(){
     if(this.checked) {
         const sorteData = [...alldata].sort((a, b) => {
 
-            const priceA = parseInt(a.price.replace(/[^\d]/g, ''));
+            const priceA = parseInt(a.price.replace(/[^\d]/g, ''));   
             const priceB = parseInt(b.price.replace(/[^\d]/g, ''));
             return priceB - priceA;
 
@@ -503,7 +504,7 @@ function loadFilter(type) {
 //         document.getElementById('filterlike').style.display = 'none';
 //         document.querySelector('.main').style.display = 'block';
 //     });
-// });
+// });    
 
 document.getElementById('pricetwok').addEventListener('change', function () {
     const filterData = alldata.filter(product => {
@@ -515,5 +516,16 @@ document.getElementById('pricetwok').addEventListener('change', function () {
     mainContainer.innerHTML = '';
     productList(filterData);
 });
+document.getElementById('pricetwok').addEventListener('change', function () {
+    const filterData = alldata.filter(product => {
+        const numericPrice = parseInt(product.price.replace(/[^\d]/g, ''));
+        return numericPrice >= 30000 && numericPrice <= 40000;
+    });
+
+    const mainContainer = document.querySelector('.containermain');
+    mainContainer.innerHTML = '';
+    productList(filterData);
+});
+
 
 

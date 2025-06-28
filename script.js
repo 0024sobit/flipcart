@@ -486,46 +486,45 @@ function loadFilter(type) {
 
 
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     let filteredData = [];
+document.addEventListener('DOMContentLoaded', function () {
+    let filteredData = [];
 
-//     document.getElementById('price-20k-30k').addEventListener('change', function () {
-//         filteredData = alldata.filter(product => {
-//             const numericPrice = parseInt(product.price.replace(/[^\d]/g, ''));
-//             return numericPrice >= 20000 && numericPrice <= 30000;
-//         });
-//     });
-
-//     document.getElementById('apply-btn').addEventListener('click', function () {
-//         const mainContainer = document.querySelector('.containermain');
-//         mainContainer.innerHTML = '';
-//         productList(filteredData); 
-
-//         document.getElementById('filterlike').style.display = 'none';
-//         document.querySelector('.main').style.display = 'block';
-//     });
-// });    
-
-document.getElementById('pricetwok').addEventListener('change', function () {
-    const filterData = alldata.filter(product => {
-        const numericPrice = parseInt(product.price.replace(/[^\d]/g, ''));
-        return numericPrice >= 20000 && numericPrice <= 30000;
+    document.getElementById('price-20k-30k').addEventListener('change', function () {
+        filteredData = alldata.filter(product => {
+            const numericPrice = parseInt(product.price.replace(/[^\d]/g, ''));
+            return numericPrice >= 20000 && numericPrice <= 30000;
+        });
     });
 
-    const mainContainer = document.querySelector('.containermain');
-    mainContainer.innerHTML = '';
-    productList(filterData);
-});
-document.getElementById('pricetwok').addEventListener('change', function () {
-    const filterData = alldata.filter(product => {
-        const numericPrice = parseInt(product.price.replace(/[^\d]/g, ''));
-        return numericPrice >= 30000 && numericPrice <= 40000;
+    document.getElementById('applybac').addEventListener('click', function () {
+        const mainContainer = document.querySelector('.containermain');
+        mainContainer.innerHTML = '';
+        productList(filteredData);           
+
+        document.getElementById('filterlike').style.display = 'none';
+        document.querySelector('.main').style.display = 'block';
     });
+});    
 
-    const mainContainer = document.querySelector('.containermain');
-    mainContainer.innerHTML = '';
-    productList(filterData);
-});
+// document.getElementById('pricetwok').addEventListener('change', function () {
+//     const filterData = alldata.filter(product => {
+//         const numericPrice = parseInt(product.price.replace(/[^\d]/g, ''));
+//         return numericPrice >= 20000 && numericPrice <= 30000;
+//     });
 
+//     const mainContainer = document.querySelector('.containermain');
+//     mainContainer.innerHTML = '';
+//     productList(filterData);
+// });
+// document.getElementById('pricetwok').addEventListener('change', function () {
+//     const filterData = alldata.filter(product => {
+//         const numericPrice = parseInt(product.price.replace(/[^\d]/g, ''));
+//         return numericPrice >= 30000 && numericPrice <= 40300;
+//     });
+
+//     const mainContainer = document.querySelector('.containermain');
+//     mainContainer.innerHTML = '';
+//     productList(filterData);
+// });
 
 
